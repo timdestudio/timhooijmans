@@ -134,11 +134,13 @@ p.mini-text{
   line-height:1.8rem;
 }
 p.big-text{
-    font-size:5rem;
-    line-height:5.5rem;
+  font-size:3.5rem;
+  line-height:4rem;
+  letter-spacing:-1;
     @media (min-width: $breakpoint-desktop){
-      font-size:3.5rem;
-      line-height:4rem;
+      font-size:5rem;
+      line-height:5.5rem;
+      letter-spacing:normal;
   }
 }
 
