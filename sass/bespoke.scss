@@ -9,8 +9,8 @@ $slow: 0.5s;
 $crawling: 1s; 
 
 //text
-$body-text-size: 1.6rem;
-$body-text-line-height: 2.4rem;
+$body-text-size: 2rem;
+$body-text-line-height: 2.8rem;
 $smoothing: antialiased;
 
 //breakpoints
@@ -51,63 +51,11 @@ body {
     font-style: normal;
 }
 @font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 400;
-  src: url("../fonts/Inter-UI-Regular.woff2") format("woff2"),
-       url("../fonts/Inter-UI-Regular.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 400;
-  src: url("../fonts/Inter-UI-Italic.woff2") format("woff2"),
-       url("../fonts/Inter-UI-Italic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 500;
-  src: url("../fonts/Inter-UI-Medium.woff2") format("woff2"),
-       url("../fonts/Inter-UI-Medium.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 500;
-  src: url("../fonts/Inter-UI-MediumItalic.woff2") format("woff2"),
-       url("../fonts/Inter-UI-MediumItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 700;
-  src: url("../fonts/Inter-UI-Bold.woff2") format("woff2"),
-       url("../fonts/Inter-UI-Bold.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 700;
-  src: url("../fonts/Inter-UI-BoldItalic.woff2") format("woff2"),
-       url("../fonts/Inter-UI-BoldItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 900;
-  src: url("../fonts/Inter-UI-Black.woff2") format("woff2"),
-       url("../fonts/Inter-UI-Black.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 900;
-  src: url("../fonts/Inter-UI-BlackItalic.woff2") format("woff2"),
-       url("../fonts/Inter-UI-BlackItalic.woff") format("woff");
+ font-family: 'SuisseIntl-Book';
+ src: url("../fonts/SuisseIntl-Book.eot");
+ src: url("../fonts/SuisseIntl-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/SuisseIntl-Book.woff2") format("woff2"), url("../fonts/SuisseIntl-Book.woff") format("woff"), url("../fonts/SuisseIntl-Book.ttf") format("truetype");
+ font-weight: normal;
+ font-style: normal; 
 }
 //set box sizing mode
 *, *:after, *:before {
@@ -116,7 +64,7 @@ body {
   box-sizing: border-box;
 }
 body {
-  font-family: 'nb_grotesksemibold', sans-serif;
+  font-family: 'SuisseIntl-Book', sans-serif;
   font-size:$body-text-size;
   font-weight:normal;
   line-height:$body-text-line-height;
@@ -178,7 +126,6 @@ h1{
   line-height:4rem;
 }
 p{
-  font-family: 'inter UI';
   font-size:1.6rem;
   line-height:2.4rem;
 }
@@ -187,14 +134,11 @@ p.mini-text{
   line-height:1.8rem;
 }
 p.big-text{
-    font-size:2.0rem;
-    line-height:2.8rem;
-    padding:3.2rem;
-    width:100%;
+    font-size:5rem;
+    line-height:5.5rem;
     @media (min-width: $breakpoint-desktop){
-      font-size:3.2rem;
+      font-size:3.5rem;
       line-height:4rem;
-      width:60%;
   }
 }
 
