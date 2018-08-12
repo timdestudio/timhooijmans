@@ -1,0 +1,553 @@
+//colors
+
+$primary: #FFF;
+$secondary: #121212;
+$grey: #F3F3F3;
+$dark-grey: #868686;
+
+//transitions
+$fast: 0.2s;
+$slow: 0.5s;
+$crawling: 1s; 
+
+//text
+$body-text-size: 1.6rem;
+$body-text-line-height: 2.4rem;
+$smoothing: antialiased;
+
+//breakpoints
+$breakpoint-tablet: 480px;
+$breakpoint-desktop: 1024px;
+
+//grid
+$gutter: 3.2rem;
+$doublegutter: $gutter * 2;
+
+//sizing
+$default-bar-height: 5rem;
+$head-height-mobile: 10rem;
+$head-height-tablet: 10rem;
+$head-height-desktop: 45.4rem;
+$scrollbar-width: 1.7rem;
+
+//layers
+$bottom-layer:10;
+$middle-layer:20;
+$top-layer:30;
+$super-layer:40;
+$god-layer:50;
+
+html {
+  //set font size so 1rem = 10px
+  font-size: 62.5%;
+}
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+//fonts
+
+@font-face {
+    font-family: 'nb_grotesksemibold';
+    src: url('../fonts/nbgrotesk-semibold-webfont.eot');
+    src: url('../fonts/nbgrotesk-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/nbgrotesk-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/nbgrotesk-semibold-webfont.woff') format('woff'),
+         url('../fonts/nbgrotesk-semibold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 400;
+  src: url("../fonts/Inter-UI-Regular.woff2") format("woff2"),
+       url("../fonts/Inter-UI-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 400;
+  src: url("../fonts/Inter-UI-Italic.woff2") format("woff2"),
+       url("../fonts/Inter-UI-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 500;
+  src: url("../fonts/Inter-UI-Medium.woff2") format("woff2"),
+       url("../fonts/Inter-UI-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 500;
+  src: url("../fonts/Inter-UI-MediumItalic.woff2") format("woff2"),
+       url("../fonts/Inter-UI-MediumItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 700;
+  src: url("../fonts/Inter-UI-Bold.woff2") format("woff2"),
+       url("../fonts/Inter-UI-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 700;
+  src: url("../fonts/Inter-UI-BoldItalic.woff2") format("woff2"),
+       url("../fonts/Inter-UI-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 900;
+  src: url("../fonts/Inter-UI-Black.woff2") format("woff2"),
+       url("../fonts/Inter-UI-Black.woff") format("woff");
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 900;
+  src: url("../fonts/Inter-UI-BlackItalic.woff2") format("woff2"),
+       url("../fonts/Inter-UI-BlackItalic.woff") format("woff");
+}
+//set box sizing mode
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'nb_grotesksemibold', sans-serif;
+  font-size:$body-text-size;
+  font-weight:normal;
+  line-height:$body-text-line-height;
+  color:$secondary;
+  background:$primary; 
+  height:100%;
+  //to prevent sub-pixel rounding problems set overflox x to hidden
+  overflow-x:hidden;
+  -webkit-font-smoothing: $smoothing;
+}
+// Clearfix mixin
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+//preloader
+div#preloader{
+  position:fixed;
+  top:0;
+  left:0;
+  background:$primary;
+  height:0.2rem;
+  width:0;
+  display:block;
+  transition:width $slow, opacity $fast;
+  z-index:$god-layer;
+}
+
+//roem box
+img#logobox{
+  width:9.6rem;
+  height:9.6rem;
+  margin:$gutter;
+  position:fixed;
+  z-index:$god-layer;
+}
+div#product-label{
+  position:fixed;
+  padding:$gutter;
+  bottom:$gutter;
+  left:$gutter;
+  background:#FFF;
+  width:32rem;
+}
+//main video
+div.main-video-block{
+  position:relative;
+  a#mute, a#fullscreen{
+    position:absolute;
+    bottom:3.2rem;
+    font-size:2.4rem;
+    z-index:$super-layer;
+  }
+  a{
+    color:$primary;
+  }
+  a#mute{
+    left:3.2rem;
+  }
+  a#fullscreen{
+    right:3.2rem;
+  }
+  video{
+    width:100%;
+    display:block;
+    position:absolute;
+    z-index:$top-layer
+  }
+}
+//introduction
+a#more-about-studio{
+  font-size:2.4rem;
+  display:inline-block;
+  border-bottom:0.2rem solid $secondary;
+  margin-top:6.4rem;
+}
+p#introducing{
+  position:absolute;
+  transform-origin:0 0 0;
+  transform: translate(0, 25.5rem) rotate(-90deg) ;
+  z-index:$super-layer;
+  svg{
+    position:relative;
+    right:1rem;
+    top:0.3rem;
+  }
+}
+svg.marquee-block{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  text{
+    font-size:400%;
+    fill:$primary;
+  }
+}
+//video general
+video{
+  object-fit: fill;
+}
+
+
+
+//helpful classes
+@mixin vertical-align-element{
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+@mixin vertical-align-parent{
+  top:50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+}
+.bottom-layer{
+  z-index:$bottom-layer;
+}
+.middle-layer{
+  z-index:$middle-layer;
+}
+.top-layer{
+  z-index:$top-layer;
+}
+.super-layer{
+  z-index:$super-layer;
+}
+.god-layer{
+  z-index:$god-layer;
+}
+.secondary-background{
+  background-color:$secondary;
+}
+.primary-background{
+  background-color:$primary;
+}
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+.half-height{
+  height:50%;
+}
+.full-height{
+  height:100%;
+}
+.half-width{
+  width:50%;
+}
+.full-width{
+  width:100%;
+}
+.no-mobile{
+  display:none !important;
+}
+.no-padding{
+  padding:none;
+}
+.no-margin{
+  margin:none;
+}
+.bottom-right-corner, .bottom-left-corner, .top-left-corner, .top-right-corner{
+  position:absolute !important;
+}
+.bottom-right-corner{
+  bottom:0;
+  right:0;
+}
+.bottom-left-corner{
+  bottom:0;
+  left:0;
+}
+.top-left-corner{
+  top:0;
+  left:0;
+}
+.top-right-corner{
+  top:0;
+  right:0;
+}
+.padding-top-and-bottom{
+  padding-top:$gutter;
+  padding-bottom:$gutter;
+}
+.padding-box{
+  padding:$gutter;
+}
+
+//fade-in class for sequential fading
+.fade-in, .pre-load-fade-in{
+  opacity:0;
+  transition: opacity $fast;
+}
+
+//default anchors
+a:link, a:visited, a:active, a:hover{
+  color:$secondary;
+  text-decoration:none;
+}
+a{
+  transition:background $fast, opacity $fast;
+}
+p,h1, h2, h3{
+  font-weight:normal;
+  margin:0;
+  padding:0;
+}
+h1{
+  font-size:3.2rem;
+  line-height:4rem;
+}
+p{
+  font-family: 'inter UI';
+  font-size:1.6rem;
+  line-height:2.4rem;
+}
+p.mini-text{
+  font-size:1.4rem;
+  line-height:1.8rem;
+}
+p.big-text{
+    font-size:2.0rem;
+    line-height:2.8rem;
+    padding:3.2rem;
+    width:100%;
+    @media (min-width: $breakpoint-desktop){
+      font-size:3.2rem;
+      line-height:4rem;
+      width:60%;
+  }
+}
+
+
+//body wrapper
+div#l-body-wrapper{
+  width:100%;
+  section{
+    @include clearfix;
+    height:auto;
+ }
+}
+
+//blocks and grid
+
+//blocks
+%l-block{
+  float:left;
+  display:block;
+  position:relative;
+  img, video{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+  }
+}
+
+// top level blocks
+.l-full-block{
+  @extend %l-block;
+  width:100%;
+  height:112.5vw;
+  img{
+    height:100%;
+  }
+  @media (min-width: $breakpoint-desktop){
+    width:100%;
+    height:56.25vw;
+  }
+}
+.l-half-block{
+  @extend %l-block;
+  width:100%;
+  height:112.5vw;
+  @media (min-width: $breakpoint-desktop){
+    width:50%;
+    height:56.25vw;
+  }
+}
+
+//nested block
+.l-nested-block{
+  @extend %l-block;
+  width:100%;
+  height:56.25vw;
+  overflow:hidden;
+  @media (min-width: $breakpoint-desktop){
+    width:50%;
+    height:28.125vw;
+  }
+}
+.l-nested-full-block{
+  @extend %l-block;
+  width:100%;
+  height:56.25vw;
+  @media (min-width: $breakpoint-desktop){
+    height:28.125vw;
+  }
+}
+.l-nested-half-block{
+  @extend %l-block;
+  width:50%;
+  height:100%;
+  @media (min-width: $breakpoint-desktop){
+    height:100%;
+  }
+}
+
+
+//columns
+/*%l-column{
+  float:left;
+  margin-left:$gutter;
+  position:relative;
+}
+.l-one-column{
+  @extend %l-column;
+  width:calc((100% - (#{$gutter} + (#{$gutter}/12))* 12) / 12);
+}
+.l-two-columns{
+  @extend %l-column;
+  width:calc((100% - (#{$gutter} + (#{$gutter}/6))* 6) / 6);
+}
+.l-three-columns{
+  @extend %l-column;
+  width:calc((100% - (#{$gutter} + (#{$gutter}/4))* 4) / 4);
+}
+.l-five-columns{
+  @extend %l-column;
+  width:calc((100% - (#{$gutter} + (#{$gutter}/2.4))* 2.4) / 2.4);
+}
+.l-six-columns{
+  @extend %l-column;
+  width:calc((100% - (#{$gutter} + (#{$gutter}/2))* 2) / 2);
+}
+.l-eight-columns{
+  @extend %l-column;
+  width:calc((100% - (#{$gutter} + (#{$gutter}/1.5))* 1.5) / 1.5);
+}
+.l-twelve-columns{
+  @extend %l-column;
+  width:calc((100% - (#{$gutter} + (#{$gutter}/1))* 1) / 1);
+}*/
+
+//other
+
+div#wip{
+  @include vertical-align-parent();
+}
+svg#marquee-block-explore{
+  text{
+    fill:$secondary;
+  }
+}
+div#explore-image-wrapper{
+  height:100%;
+  width:100%;
+  img{
+    @include vertical-align-element();
+    width:auto !important;
+    height:80% !important;
+    margin:auto;
+  }
+}
+div#join-community-wrapper{
+  height:50%;
+  width:25%;
+  h1,h2,h3,p{
+    color:$primary;
+  }
+}
+div#footer{
+  background:$grey;
+  p.big-text{
+    margin:auto;
+    @include vertical-align-element();
+    display:block;
+    a{
+        border-bottom:0.2rem solid $secondary;
+    }
+  }
+  p.mini-text{
+    color:$dark-grey;
+  }
+  div.mini-links-wrapper{
+    a{
+      color:$dark-grey;
+      font-size:1.4rem;
+      line-height:1.8rem;
+      margin-left:3.2rem;
+    }
+  }
+}
+
+//buttons and stuff
+%button{
+  display:block;
+  border:0.2rem solid $secondary;
+  width:100%;
+  padding:1.6rem 2.4rem 1.6rem 2.4rem;
+  svg{
+    float:right;
+    position:relative;
+    transform: translateY(0.4rem);
+    fill:$secondary;
+  }
+}
+a.button{
+  @extend %button;
+}
+a.button-flipped{
+  @extend %button;
+  border-color:$primary;
+  color:$primary;
+  svg{
+    fill:$primary !important;
+  }
+}
