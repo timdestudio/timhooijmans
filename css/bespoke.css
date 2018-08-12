@@ -49,6 +49,11 @@ a:link, a:visited, a:active, a:hover {
 a {
   transition: opacity 0.2s; }
 
+a.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem; }
+
 p, h1, h2, h3 {
   font-weight: normal;
   margin: 0;
@@ -59,8 +64,9 @@ h1 {
   line-height: 4rem; }
 
 p {
-  font-size: 1.6rem;
-  line-height: 2.4rem; }
+  font-size: 2rem;
+  line-height: 2.8rem;
+  letter-spacing: -0.04rem; }
 
 p.mini-text {
   font-size: 1.4rem;
@@ -69,12 +75,14 @@ p.mini-text {
 p.big-text {
   font-size: 3.5rem;
   line-height: 4rem;
-  letter-spacing: -1; }
+  letter-spacing: -0.1rem; }
   @media (min-width: 1024px) {
     p.big-text {
       font-size: 5rem;
       line-height: 5.5rem;
       letter-spacing: normal; } }
+  p.big-text a {
+    border-bottom: 0.4rem solid #070708; }
 
 div#l-body-wrapper {
   width: 100%; }
@@ -84,6 +92,22 @@ div#l-body-wrapper {
       display: table;
       clear: both;
       content: ''; }
+
+section#l-about-wrapper {
+  max-width: 60rem;
+  padding: 7rem 1rem 1rem 1rem; }
+  @media (min-width: 1024px) {
+    section#l-about-wrapper {
+      max-width: 84.6rem;
+      height: 8rem;
+      padding: 2rem 2rem 2rem 6rem; } }
+
+div#about-spacer {
+  display: block;
+  height: 7rem; }
+  @media (min-width: 1024px) {
+    div#about-spacer {
+      height: 8rem; } }
 
 .l-full-block {
   float: left;
