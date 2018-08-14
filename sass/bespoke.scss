@@ -70,10 +70,10 @@ body {
   line-height:$body-text-line-height;
   color:$black;
   background:$white; 
-  height:100%;
+  width:100%;
   //to prevent sub-pixel rounding problems set overflox x to hidden
-  overflow-x:hidden;
   -webkit-font-smoothing: $smoothing;
+  background:#0000FF;
 }
 
 // Clearfix mixin
@@ -154,57 +154,30 @@ p.big-text{
 }
 
 //lay-out elements and wrappers
-div#l-body-wrapper{
-}
-section#l-gallery-wrapper{
-  height:100vh;
-  background:#FF00FF;
-}
-div#l-images-ribbon{
-  background:#FF0000;
+div#l-images-wrapper{
   height:77.3vh;
-  width:10000px;
-  div.image-cluster{
-    display:inline-block;
+  background:#FF0000;
+  display:flex;
+  overflow:hidden;
+  div.l-images-cluster{
+    display:flex;
     height:inherit;
     img{
-      float:left;
-      display:block;
       height:inherit;
       width:auto;
     }
   }
 }
-div#l-text-ribbons-wrapper{
-  background:#000;
-  height:calc(22.7vh - 4.8rem);
-}
-div#l-titles-ribbon{
-  position:fixed;
-  background:$white;
-  height:calc(22.7vh - 4.8rem);
-  padding-left:0.8rem;
-  h1{
-    font-size:calc(22.7vh - 4.8rem);
-    line-height:calc(22.7vh - 4.8rem);
-  }
-}
-div#l-small-ribbon{
-  position:fixed;
-  background:$white;
-  bottom:0;
-  width:100vw;
+div#l-info-ribbon{
+  height:4.8rem;
   padding:1rem;
+  position:absolute;
+  bottom:0;
+  left:0;
+  background:#FFF;
+  width:100vw;
   a{
     float:right;
-  }
-}
-section#l-about-wrapper{
-  max-width:60rem;
-  padding:7rem 1rem 1rem 1rem;
-  @media (min-width: $breakpoint-desktop){
-   max-width:84.6rem;
-   padding:2rem 2rem 2rem 6rem;
   }
 }
 div#about-spacer{
