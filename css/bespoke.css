@@ -100,7 +100,7 @@ div#l-images-wrapper {
 
 div#l-title-wrapper {
   position: fixed;
-  bottom: 77.3vh;
+  bottom: 4.8rem;
   height: calc(22.7vh - 4.8rem);
   background: #FFF;
   display: flex;
