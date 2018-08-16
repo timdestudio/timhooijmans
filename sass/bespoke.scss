@@ -158,16 +158,16 @@ div#l-images-wrapper{
   position:absolute;
   height:77.3vh;
   background:#FF0000;
-  display:flex;
   width:100vw;
-  overflow-x:scroll;
+  overflow:scroll;
   -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
   div.l-images-cluster{
-    display:flex;
     height:inherit;
     img{
-      height:inherit;
-      width:auto;
+      display:inline-block;
+      height:100px;
+      width:500px;
     }
   }
 }
