@@ -159,10 +159,10 @@ div#l-images-wrapper{
   height:77.3vh;
   background:#FF0000;
   width:100vw;
-  overflow:scroll;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling:touch;
   white-space: nowrap;
   div.l-images-cluster{
+    -webkit-overflow-scrolling:touch;
     height:inherit;
     img{
       display:inline-block;
@@ -172,7 +172,7 @@ div#l-images-wrapper{
   }
 }
 div#l-title-wrapper{
-  position:fixed;
+  position:absolute;
   bottom:4.8rem;
   height:calc(22.7vh - 4.8rem);
   background:#FFF;
@@ -186,7 +186,7 @@ div#l-title-wrapper{
 div#l-info-ribbon{
   height:4.8rem;
   padding:1rem;
-  position:fixed;
+  position:absolute;
   bottom:0;
   left:0;
   background:#FFF;
