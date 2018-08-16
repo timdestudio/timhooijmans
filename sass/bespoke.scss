@@ -161,6 +161,7 @@ div#l-images-wrapper{
   display:flex;
   width:100vw;
   overflow-x:scroll;
+  -webkit-overflow-scrolling: touch;
   div.l-images-cluster{
     display:flex;
     height:inherit;

@@ -90,7 +90,8 @@ div#l-images-wrapper {
   background: #FF0000;
   display: flex;
   width: 100vw;
-  overflow-x: scroll; }
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch; }
   div#l-images-wrapper div.l-images-cluster {
     display: flex;
     height: inherit; }
