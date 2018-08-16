@@ -73,7 +73,7 @@ body {
   width:100%;
   //to prevent sub-pixel rounding problems set overflox x to hidden
   -webkit-font-smoothing: $smoothing;
-  background:#0000FF;
+  background:#FFF;
 }
 
 // Clearfix mixin
@@ -155,10 +155,10 @@ p.big-text{
 
 //lay-out elements and wrappers
 div#l-images-wrapper{
+  position:absolute;
   height:77.3vh;
   background:#FF0000;
   display:flex;
-  overflow:hidden;
   div.l-images-cluster{
     display:flex;
     height:inherit;
@@ -168,16 +168,34 @@ div#l-images-wrapper{
     }
   }
 }
+div#l-title-wrapper{
+  position:fixed;
+  top:77.3vh;
+  height:calc(22.7vh - 4.8rem);
+  background:#FFF;
+  display:flex;
+  padding:1rem;
+  svg{
+    height:100%;
+    width:auto;
+  }
+}
 div#l-info-ribbon{
   height:4.8rem;
   padding:1rem;
-  position:absolute;
+  position:fixed;
   bottom:0;
   left:0;
   background:#FFF;
   width:100vw;
   a{
     float:right;
+  }
+}
+section#l-about-wrapper{
+  padding:7rem 1rem 1rem 1rem;
+  @media (min-width: $breakpoint-desktop){
+    padding:2rem 2rem 2rem 6rem; 
   }
 }
 div#about-spacer{
