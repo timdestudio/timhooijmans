@@ -70,19 +70,25 @@ body {
   line-height:$body-text-line-height;
   color:$black;
   background:$white; 
-  width:100%;
-  //to prevent sub-pixel rounding problems set overflox x to hidden
   -webkit-font-smoothing: $smoothing;
   background:#FFF;
+  overflow-x:hidden;
 }
 
-// Clearfix mixin
+// mixins
 @mixin clearfix {
   &:after {
     display: table;
     clear: both;
     content: '';
   }
+}
+@mixin flex{
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;  
 }
 
 //video general
@@ -154,36 +160,42 @@ p.big-text{
 }
 
 //lay-out elements and wrappers
-div#l-images-wrapper{
+div#images-wrapper{
   position:absolute;
   height:77.3vh;
-  background:#FF0000;
   width:100vw;
+  background:#FF0000;
+  overflow-x: scroll;
+  overflow-y:hidden;
   -webkit-overflow-scrolling:touch;
-  white-space: nowrap;
-  div.l-images-cluster{
-    -webkit-overflow-scrolling:touch;
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
+  @include flex;
+  div.images-cluster{
     height:inherit;
+    @include flex;
     img{
-      display:inline-block;
-      height:100px;
-      width:500px;
+      height:inherit;
+      width:auto;
     }
   }
 }
-div#l-title-wrapper{
+div#titles-wrapper{
   position:absolute;
   bottom:4.8rem;
   height:calc(22.7vh - 4.8rem);
   background:#FFF;
-  display:flex;
-  padding:1rem;
+  @include flex;
+  padding:1rem; 
   svg{
+    display:block;
+    position:relative;
     height:100%;
     width:auto;
   }
 }
-div#l-info-ribbon{
+div#info-ribbon{
   height:4.8rem;
   padding:1rem;
   position:absolute;
