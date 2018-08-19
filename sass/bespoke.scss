@@ -164,7 +164,6 @@ div#images-wrapper{
   position:absolute;
   height:77.3vh;
   width:100vw;
-  background:#FF0000;
   overflow-x: scroll;
   overflow-y:hidden;
   -webkit-overflow-scrolling:touch;
@@ -185,14 +184,20 @@ div#titles-wrapper{
   position:absolute;
   bottom:4.8rem;
   height:calc(22.7vh - 4.8rem);
+  width:100vw;
+  overflow:hidden;
   background:#FFF;
   @include flex;
-  padding:1rem; 
-  svg{
-    display:block;
-    position:relative;
-    height:100%;
-    width:auto;
+  padding:1rem 0 1rem 0; 
+  div.project-title-wrapper{
+    padding-left:1rem;
+    position:absolute;
+    height:calc(22.7vh - 6.8rem);
+    svg{
+      display:block;
+      height:100%;
+      width:auto;
+    }
   }
 }
 div#info-ribbon{
