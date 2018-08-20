@@ -136,6 +136,7 @@ div#titles-wrapper {
   padding: 1rem 0 1rem 0; }
   div#titles-wrapper div.project-title-wrapper {
     padding-left: 1rem;
+    padding-right: 1rem;
     position: absolute;
     height: calc(22.7vh - 6.8rem); }
     div#titles-wrapper div.project-title-wrapper svg {
