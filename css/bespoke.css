@@ -4,9 +4,6 @@ html {
 html {
   height: 100%; }
 
-body {
-  min-height: 100%; }
-
 @font-face {
   font-family: 'nb_grotesksemibold';
   src: url("../fonts/nbgrotesk-semibold-webfont.eot");
@@ -33,7 +30,8 @@ body {
   background: #FFF;
   -webkit-font-smoothing: antialiased;
   background: #FFF;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  overflow-y: hidden; }
 
 video {
   object-fit: fill; }
@@ -85,12 +83,6 @@ p.big-text {
     border-bottom: 0.4rem solid #070708; }
 
 div#images-wrapper {
-  position: absolute;
-  height: 77.3vh;
-  width: 100vw;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -99,11 +91,22 @@ div#images-wrapper {
   /* TWEENER - IE 10 */
   display: -webkit-flex;
   /* NEW - Chrome */
-  display: flex; }
-  div#images-wrapper::-webkit-scrollbar {
-    display: none; }
+  display: flex;
+  position: absolute;
+  height: 77.3vh;
+  width: 100vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; }
+  @media (min-width: 1024px) {
+    div#images-wrapper {
+      display: block;
+      width: 72.57vw;
+      left: 27.43vw;
+      height: 100vh;
+      overflow-x: hidden;
+      overflow-y: scroll; } }
   div#images-wrapper div.images-cluster {
-    height: inherit;
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;
@@ -112,10 +115,20 @@ div#images-wrapper {
     /* TWEENER - IE 10 */
     display: -webkit-flex;
     /* NEW - Chrome */
-    display: flex; }
+    display: flex;
+    height: 77.3vh; }
+    @media (min-width: 1024px) {
+      div#images-wrapper div.images-cluster {
+        flex-direction: column;
+        width: 72.57vw;
+        height: auto; } }
     div#images-wrapper div.images-cluster img {
-      height: inherit;
+      height: 77.3vh;
       width: auto; }
+      @media (min-width: 1024px) {
+        div#images-wrapper div.images-cluster img {
+          width: 72.57vw;
+          height: auto; } }
 
 div#titles-wrapper {
   position: absolute;
@@ -123,7 +136,6 @@ div#titles-wrapper {
   height: calc(22.7vh - 4.8rem);
   width: 100vw;
   overflow: hidden;
-  background: #FFF;
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -moz-box;
@@ -134,11 +146,26 @@ div#titles-wrapper {
   /* NEW - Chrome */
   display: flex;
   padding: 1rem 0 1rem 0; }
+  @media (min-width: 1024px) {
+    div#titles-wrapper {
+      transform: rotate(90deg);
+      transform-origin: 0% 0%;
+      top: 0;
+      left: calc(27.43vw);
+      width: 100vh;
+      height: calc(27.43vw - 6.8rem);
+      padding: 0; } }
   div#titles-wrapper div.project-title-wrapper {
     padding-left: 1rem;
     padding-right: 1rem;
     position: absolute;
     height: calc(22.7vh - 6.8rem); }
+    @media (min-width: 1024px) {
+      div#titles-wrapper div.project-title-wrapper {
+        height: calc(27.43vw - 6.8rem);
+        padding-top: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem; } }
     div#titles-wrapper div.project-title-wrapper svg {
       display: block;
       height: 100%;
@@ -150,10 +177,23 @@ div#info-ribbon {
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #FFF;
   width: 100vw; }
+  @media (min-width: 1024px) {
+    div#info-ribbon {
+      transform: rotate(-90deg);
+      transform-origin: 0% 100%;
+      width: 100vh;
+      height: 6.8rem;
+      left: 6.8rem;
+      padding: 2rem; } }
+  @media (min-width: 1024px) {
+    div#info-ribbon span {
+      float: right; } }
   div#info-ribbon a {
     float: right; }
+    @media (min-width: 1024px) {
+      div#info-ribbon a {
+        float: left; } }
 
 section#l-about-wrapper {
   padding: 7rem 1rem 1rem 1rem; }
@@ -167,25 +207,5 @@ div#about-spacer {
   @media (min-width: 1024px) {
     div#about-spacer {
       height: 8rem; } }
-
-.l-full-block {
-  float: left;
-  display: block;
-  position: relative; }
-  .l-full-block img, .l-full-block video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover; }
-
-.l-full-block {
-  width: 100%;
-  height: 112.5vw; }
-  .l-full-block img {
-    height: 100%; }
-  @media (min-width: 1024px) {
-    .l-full-block {
-      width: 100%;
-      height: 56.25vw; } }
 
 /*# sourceMappingURL=bespoke.css.map */

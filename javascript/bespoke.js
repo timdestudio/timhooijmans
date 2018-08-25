@@ -21,10 +21,9 @@ var Manager = {
 		console.log('image clusters: ' + Manager.imageClusters.length);
 		console.log('project Titles: ' + Manager.projectTitles.length);
 
-		//position the titles according to the image clusters
 		Manager.positionTitles();
 
-		//on horizontal scroll
+		//on scroll images wrapper
 		$('div#images-wrapper').scroll(function() {
 
 			//position the titles according to the image clusters
@@ -35,59 +34,46 @@ var Manager = {
 	},//init end
 	positionTitles:function(){
 
-		//for loop the amount of image clusters
+		var vw = window.innerWidth;
+		var margin = 50;
+
+		//for loop trough image clusters
 		for(i=0;i<Manager.imageClusters.length;i++){
 
-			//store left offset of current cluster
-			var clusterLeft = $(Manager.imageClusters[i]).offset().left;
+			//get offset of current cluster vertical or horizontal depending on the desktop breakpoint
+			if( vw < 1024 ){
 
-			//store width of current cluster and title
-			var clusterWidth = $(Manager.imageClusters[i]).width();
-			var titleWidth = $(Manager.projectTitles[i]).outerWidth();
+				var clusterLeft = $(Manager.imageClusters[i]).offset().left;
+				var ratio = $(Manager.projectTitles[i]).width() / ($(Manager.imageClusters[i]).width() - margin);
 
-			//store viewport width
-			var vw = window.innerWidth;
-
-			//calculate and store tail of cluster and title
-			var clusterTail = clusterWidth - vw;
-			var titleTail = titleWidth - vw;
-
-			//calculate ratio for tail travel
-			var tailRatio = titleTail / clusterTail;
-
-			//calculate tail position
-			var tailPos = clusterWidth - vw;
-
-
-			//if current cluster has a negative offset
-			if( clusterLeft < 0 ){
-
-				if(Math.abs(clusterLeft) < tailPos){
-
-					//set new left position calculated with ratio
-					var newLeft = tailRatio * (clusterLeft);
-
-				}else{
-
-					var newLeft = clusterLeft + (clusterWidth - titleWidth);
-				
-				}
-
-			//if current cluster doesn't have a negative offset
 			}else{
 
+				var clusterLeft = $(Manager.imageClusters[i]).offset().top;
+				var ratio = $(Manager.projectTitles[i]).height() / ($(Manager.imageClusters[i]).height() - margin);
+
+			}
+
+			//if current cluster has a negative offset
+			if(clusterLeft<0){
+	
+				//set new left position calculated with ratio
+				var newLeft = ratio * (clusterLeft);
+	
+			//if current cluster doesn't have a negative offset
+			}else{
+	
 				//set new left position to cluster position
 				var newLeft = clusterLeft;
-
+	
 			}//if statement end
-
+	
 			//adjust the title to the cluster offset
 			$(Manager.projectTitles[i]).css('left',newLeft);
-
+	
 		}//for loop end
-
+	
 	}//position titles end
-
+	
 };//Manager
 
 
