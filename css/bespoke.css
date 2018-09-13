@@ -197,7 +197,6 @@ div#info-ribbon {
         float: left; } }
 
 section#l-about-wrapper {
-  display: none;
   position: absolute;
   width: 100vw;
   height: 100vh;

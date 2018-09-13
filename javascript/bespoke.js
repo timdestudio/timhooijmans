@@ -31,15 +31,7 @@ var Manager = {
 		
 		});
 
-		$('#images-wrapper').animate({ scrollTop: 2000 }, 6000);
-
-		$('#close-about').click(function(){
-
-			$('#about-wrapper').css({
-				display:'none'
-			});
-
-		});
+		$('#images-wrapper').animate({ scrollTop: 200 }, 500);
 
 	},//init end
 	positionTitles:function(){
