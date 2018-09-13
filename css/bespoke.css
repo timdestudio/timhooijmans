@@ -50,7 +50,8 @@ a {
 a.close-button {
   position: absolute;
   top: 0.5rem;
-  right: 1rem; }
+  right: 1rem;
+  z-index: 50; }
 
 p, h1, h2, h3 {
   font-weight: normal;
@@ -196,7 +197,13 @@ div#info-ribbon {
         float: left; } }
 
 section#l-about-wrapper {
-  padding: 7rem 1rem 1rem 1rem; }
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 30;
+  padding: 7rem 1rem 1rem 1rem;
+  background: #FFF; }
   @media (min-width: 1024px) {
     section#l-about-wrapper {
       padding: 2rem 2rem 2rem 6rem; } }

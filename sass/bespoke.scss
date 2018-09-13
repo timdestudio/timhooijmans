@@ -138,6 +138,7 @@ a.close-button{
   position:absolute;
   top:0.5rem;
   right:1rem;
+  z-index:$god-layer;
 }
 p,h1, h2, h3{
   font-weight:normal;
@@ -283,7 +284,13 @@ div#info-ribbon{
   }
 }
 section#l-about-wrapper{
+  display:none;
+  position:absolute;
+  width:100vw;
+  height:100vh;
+  z-index:$top-layer;
   padding:7rem 1rem 1rem 1rem;
+  background:$white;
   @media (min-width: $breakpoint-desktop){
     padding:2rem 2rem 2rem 6rem; 
   }
