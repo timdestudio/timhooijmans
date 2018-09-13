@@ -31,7 +31,17 @@ var Manager = {
 		
 		});
 
-		$('#images-wrapper').animate({ scrollTop: 200 }, 500);
+		setTimeout(function(){
+
+			$('#images-wrapper').animate({ scrollTop: 200 }, 500);
+		
+		},700);
+
+		setTimeout(function(){
+
+			$('#images-wrapper').animate({ scrollTop: 0 }, 500);
+		
+		},1200);
 
 	},//init end
 	positionTitles:function(){

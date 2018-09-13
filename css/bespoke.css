@@ -160,7 +160,8 @@ div#titles-wrapper {
     padding-left: 1rem;
     padding-right: 1rem;
     position: absolute;
-    height: calc(22.7vh - 6.8rem); }
+    height: calc(22.7vh - 6.8rem);
+    background: #FFF; }
     @media (min-width: 1024px) {
       div#titles-wrapper div.project-title-wrapper {
         height: calc(27.43vw - 6.8rem);
